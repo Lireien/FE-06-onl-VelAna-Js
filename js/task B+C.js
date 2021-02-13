@@ -19,3 +19,10 @@ alert(booleans);
 alert(undefined);
 alert(nothing);
 alert(object);
+// Задание C! Вывести в консоль все типы данных переменных, созданных в задании B.
+console.log(numeric);
+console.log(strings);
+console.log(booleans);
+console.log(undefined);
+console.log(nothing);
+console.log(object);
