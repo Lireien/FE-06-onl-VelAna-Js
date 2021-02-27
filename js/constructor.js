@@ -11,7 +11,11 @@ this.getElementsQuantity = function(){
   return this.data.length;
 }
 this.getQuantityOfSymbols = function(){
-  
+  const result = [];
+  for (let val of this.data){
+    result.push(val.length)
+  }
+  return result;
 }
 
 
@@ -22,4 +26,5 @@ this.getStringWithComma = function(){
 
 const words = new iAmConstructor(['пирамида', 'юг', 'параллелограмм']);
 console.log(words.getElementsQuantity());
-console.log(words.getStringWithComma())
+console.log(words.getStringWithComma());
+console.log(words.getQuantityOfSymbols());
