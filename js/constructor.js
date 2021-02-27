@@ -25,6 +25,6 @@ this.getStringWithComma = function(){
 }
 
 const words = new iAmConstructor(['пирамида', 'юг', 'параллелограмм']);
-console.log(words.getElementsQuantity());
-console.log(words.getStringWithComma());
-console.log(words.getQuantityOfSymbols());
+console.log('getElementsQuantity 'words.getElementsQuantity());
+console.log('getElementsQuantity 'words.getStringWithComma());
+console.log('getQuantityOfSymbols 'words.getQuantityOfSymbols());
