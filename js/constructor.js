@@ -10,17 +10,15 @@ this.data = arr;
 this.getElementsQuantity = function(){
   return this.data.length;
 }
-
-
+this.getQuantityOfSymbols = function(){
+  
+}
 
 
 this.getStringWithComma = function(){
   return this.data.join(', ')
 }
 }
-
-
-
 
 const words = new iAmConstructor(['пирамида', 'юг', 'параллелограмм']);
 console.log(words.getElementsQuantity());
