@@ -9,36 +9,25 @@
   </head>
   <body>
     <div class="container">
-      <h1>Don't be too strict! I'm just learning!</h1>
-      <div class="modal">
-        <!-- В стилях display.none, удалите, чтобы увидеть -->
-        <div class="popap">
-          <div class="popap-head">
-            <div class="close">X</div>
+      <div class="tabs">
+        <div class="tabs-headers">
+          <div class="tabs-header__item active" data-tab="1">Fish-text-1
+            <button class="close">X</button>
           </div>
-          <div class="popap-main">
-            <form class="popap-form" id="popap-form">
-              <label>
-                <span>First Name</span>
-                <input type="text" name="first-name" />
-              </label>
-              <label>
-                <span>Last Name</span>
-                <input type="text" name="last-name"  />
-              </label>
-              <label>
-                <span>Age</span>
-                <input type="text" name="age"  />
-              </label>
-            </form>
-            <div class="popap-btn">
-              <div class="btn close">close</div>
-              <div class="btn ok">ok</div>
-            </div>
+          <div class="tabs-header__item"data-tab="2">Fish-text-2
+            <button class="close">X</button>
+          </div>
+          <div class="tabs-header__item" data-tab="3">Fish-text-3
+            <button class="close">X</button>
           </div>
         </div>
+        <div class="tabs-content">
+          <div class="tabs-content__item active"data-tab="1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, assumenda!</div>
+          <div class="tabs-content__item" data-tab="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste sequi alias praesentium sit magni!</div>
+          <div class="tabs-content__item"data-tab="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus reprehenderit maxime debitis, culpa assumenda quisquam? Beatae sequi ipsum voluptates magnam.</div>
+        </div>
       </div>
-      <div class="btn add-user">add user</div>
+      
       <!-- <script src="/js/index.js"></script>
   <script src="/js/task A.js"></script>
   <script src="/js/task B+C.js"></script>
@@ -49,7 +38,8 @@
       <script src="/js/timer.js"></script> -->
       <!-- <script src="/js/calculator.js"></script>
       <script src="/js/constructor.js"></script> -->
-      <script src="/js/modal.js"></script>
+      <!-- <script src="/js/modal.js"></script> -->
+      <script src="/js/tabs.js"></script>
     </div>
   
   </body>
