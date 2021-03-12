@@ -40,9 +40,10 @@ h1 {
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  z-index: 55;
 }
 .modal.hidden {
-  display:none;
+  display: none;
 }
 .popap {
   position: absolute;
@@ -119,4 +120,12 @@ h1 {
 
 .btn:hover {
   border-color: #333;
+}
+.table-container{
+  width: 100%;
+}
+.homework-8th {
+  border: 1px solid grey;
+  width: 100%;
+  z-index: 50;
 }
