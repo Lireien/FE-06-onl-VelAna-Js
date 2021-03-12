@@ -64,7 +64,7 @@ h1 {
 }
 .tabs-content__item.active {
   display: block;
-  background-color: whitesmoke;
+  background-color: rgb(228, 190, 141);
 }
 .tabs-content__item.closed {
   display: block;
