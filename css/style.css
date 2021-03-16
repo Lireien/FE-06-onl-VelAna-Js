@@ -39,6 +39,8 @@ h1 {
 .tabs-headers {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
+  
 }
 .tabs-header__item {
   width: 200px;
@@ -47,6 +49,7 @@ h1 {
   padding: 15px;
   border: 1px solid lightpink;
   position: relative;
+  background-color: sandybrown;
 }
 .tabs-header__item.active {
   border: 1px solid brown;
@@ -57,18 +60,16 @@ h1 {
 .tabs-content {
   font-weight: normal;
 }
-.tabs-content__item {
+.content {
   display: none;
   border: 1px solid lightpink;
   padding: 20px;
 }
-.tabs-content__item.active {
+.content.active {
   display: block;
   background-color: rgb(228, 190, 141);
 }
-.tabs-content__item.closed {
-  display: block;
-}
+
 .close {
   position: absolute;
   top: 0;
