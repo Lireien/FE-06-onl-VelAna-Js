@@ -8,7 +8,28 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div class="container">
+    <span class="select__description">Select Type</span>
+      <select name="Select" id="#select" class="select">
+        <option value="type1" class="value active" data-id="1">1</option>
+        <option value="type2" class="value" data-id="2">2</option>
+        <option value="type3" class="value" data-id="3">3</option>
+        <option value="type4" class="value" data-id="4">4</option>
+      </select>
+      <button class="filtration">Filter</button>
+    <table class="table__sort">
+      <thead>
+        <tr>
+          <th class="header__cell">Price</th>
+          <th class="header__cell">Type</th>
+          <th class="header__cell">Area</th>
+          <th class="header__cell">Presence</th>
+          <th class="header__cell">Name</th>
+          <th class="header__cell">ID</th>
+        </tr>
+      </thead>
+    </table>
+      
+      <script src="/js/les10.js"></script>
     </div>
   
   </body>
