@@ -10,23 +10,19 @@ html {
   font-size: 16px;
   height: 100%;
 }
-body{
-  background-color: burlywood;
+body {
+  background-color: rgb(238, 208, 168);
 }
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;  
+  padding: 0 15px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-h1 {
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: bold;
-  color: blueviolet;
-  padding: 20px;
-  
+.table {
+  border: 1px solid red;
+  width: 100%;
 }
