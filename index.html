@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <div class="container">
-  <h1>Don't be too strict! I'm just learning!</h1>
-  <script src="/js/index.js"></script>
-  <script src="/js/task A.js"></script>
-  <script src="/js/task B+C.js"></script>
-  <script src="/js/task D.js"></script>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <div class="tabs-headers">
+          <div class="tabs-header__item active" data-tab="1">Fish-text-1
+            <button class="close">X</button>
+          </div>
+          <div class="tabs-header__item"data-tab="2">Fish-text-2
+            <button class="close">X</button>
+          </div>
+          <div class="tabs-header__item" data-tab="3">Fish-text-3
+            <button class="close">X</button>
+          </div>
+        </div>
+        <div class="tabs-content">
+          <div class="content content-1 active "data-tab="1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, assumenda!</div>
+          <div class="content content-2" data-tab="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iste sequi alias praesentium sit magni!</div>
+          <div class="content content-3"data-tab="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus reprehenderit maxime debitis, culpa assumenda quisquam? Beatae sequi ipsum voluptates magnam.</div>
+        </div>
+      </div>
+      <script src="/js/tabs.js"></script>
+    </div>
+  
+  </body>
 </html>

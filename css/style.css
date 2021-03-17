@@ -10,13 +10,13 @@ html {
   font-size: 16px;
   height: 100%;
 }
-body{
-  background-color: burlywood;
+body {
+  background-color: rgb(238, 208, 168);
 }
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;  
+  padding: 0 15px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -28,5 +28,53 @@ h1 {
   font-weight: bold;
   color: blueviolet;
   padding: 20px;
+}
+* {
+  font-family: sans-serif;
+}
+.tabs {
+  width: 600px;
+  margin: 0 auto;
+}
+.tabs-headers {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
   
+}
+.tabs-header__item {
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  border: 1px solid lightpink;
+  position: relative;
+  background-color: sandybrown;
+}
+.tabs-header__item.active {
+  border: 1px solid brown;
+}
+.tabs-header__item.closed {
+  display: none;
+}
+.tabs-content {
+  font-weight: normal;
+}
+.content {
+  display: none;
+  border: 1px solid lightpink;
+  padding: 20px;
+}
+.content.active {
+  display: block;
+  background-color: rgb(228, 190, 141);
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
 }
