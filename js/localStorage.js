@@ -39,10 +39,12 @@ function createElement(template){
 initTable(users);
 localStorage.clear()
 
+const usersJson = JSON.stringify(users);
 window.onload = function (){
-if(localStorage.getItem("users") === null){
-
-} localStorage.setItem("users", JSON.stringify(users));
-
+  const isData = localStorage.getItem("users");
+  console.log(isData);
+  if (isData === null){
+    localStorage.setItem("users", usersJson)
+  }
 }
 
