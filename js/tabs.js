@@ -11,12 +11,12 @@ switchTitleElements.forEach(function (item) {
     );
 
     switchContentElements.forEach(function (item) {
-      if (item.classList === 'active') {
+      if (item.classList.contains === 'active') {
       }
       item.classList.remove('active');
     });
     switchTitleElements.forEach(function (item) {
-      if (item.classList === 'active') {
+      if (item.classList.contains === 'active') {
       }
       item.classList.remove('active');
     });
@@ -31,12 +31,6 @@ closeButtonElements.forEach((closeButtonElements) => {
 
 function closeTabHandler(evt) {
   evt.stopPropagation();
-  // 1stvar
-  // const allTabsElements = document.querySelectorAll('.tabs-header__item');
-  // if (allTabsElements.length < 2) {
-  //   return;
-  // }
-
   let switchTitleElement = evt.target.parentElement;
   const contentTab = switchTitleElement.dataset.tab;
   // console.log(contentTab);
@@ -60,7 +54,7 @@ function closeTabHandler(evt) {
   }
   // 2ndvar
   const allTabsElements = document.querySelectorAll('.tabs-header__item');
-  if(allTabsElements.length===1){
+  if (allTabsElements.length === 1) {
     document.querySelector(`.tabs-header__item .close`).remove();
   }
 }
