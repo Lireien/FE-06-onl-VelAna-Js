@@ -38,13 +38,15 @@ function createElement(template){
 }
 initTable(users);
 localStorage.clear()
-
 const usersJson = JSON.stringify(users);
 window.onload = function (){
+  
   const isData = localStorage.getItem("users");
   console.log(isData);
   if (isData === null){
     localStorage.setItem("users", usersJson)
   }
+  let storageData = JSON.parse(localStorage.getItem("users"));
+  console.log(storageData)
 }
 
