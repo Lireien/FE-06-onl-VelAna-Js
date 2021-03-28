@@ -9,7 +9,52 @@
   </head>
   <body>
     <div class="container">
+      <div class="buttons">
+        <button class="create_user">Create user</button>
+        <button class="get_users">Get all users</button>
+        <button class="get_user">Get user</button>
+        <button class="update_user">Update user</button>
+        <button class="delete_user">Delete user</button>
+      </div>
+      <div class="labels">
+        <form name="users" class="form">
+          <label
+            >Enter user-ID <input type="text" name="Id" class="user_id"
+          /></label>
+          <label
+            >Enter user name <input type="text" name="name" class="name_value"
+          /></label>
+          <label
+            >Enter new phone<input type="text" name="phone" class="phone_value"
+          /></label>
+          <label
+            >Enter user email
+            <input type="text" name="email" class="email_value"
+          /></label>
+          <label>
+            Enter user avatar adress
+            <input type="text" name="avatar" class="avatar_value"
+          /></label>
+        </form>
+      </div>
+      <span class="select_description"></span>
+      <select name="Select" class="select">
+        <option value="page 1">1</option>
+        <option value="page 2">2</option>
+        <option value="page 3">3</option>
+      </select>
+      <table class="users-data">
+        <thead>
+          <tr>
+            <th class="header_cell">User id</th>
+            <th class="header_cell">Username</th>
+            <th class="header_cell">User phonenumber</th>
+            <th class="header_cell">User e-mail</th>
+            <th class="header_cell">Avatar</th>
+          </tr>
+        </thead>
+      </table>
     </div>
-  
+    <script src="/js/14-les-crud.js"></script>
   </body>
 </html>
