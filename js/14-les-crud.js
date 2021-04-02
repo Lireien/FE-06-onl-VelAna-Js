@@ -84,23 +84,25 @@ function moveUsersToTable() {
       return data;
     })
     .then((data) => {
-      data.forEach((userData) => initTable(userData));
+      data.forEach((user) => {
+        fillTable(data);
+      });
     });
 }
-
-function initTable(data) {
-  data.forEach((user) => {
-    const template = `<tr><td>${user.ID}</td><td>${user.name}</td><td>${user.phone}</td><td>${user.email}</td><td>${user.avatar}</td></tr>`;
-    const templateElement = createELement(template);
+function fillTable(users) {
+  users.forEach((user) => {
+    const template = `<tr><td>${user.usersid}</td><td>${user.name}</td><td>${user.phone}</td><td>${user.email}</td><td>${user.avatar}</td></tr>`;
+    const templateElement = createElement(template);
     tableElement.append(templateElement);
   });
 }
 
-function createELement(template) {
-  const element = document.createElement(`table`);
+function createElement(template) {
+  const element = createElement("table");
   element.innerHTML = template;
   return element.firstElementChild;
 }
+
 moveUsersToTable();
 
 //CRUD
