@@ -10,17 +10,14 @@ html {
   font-size: 16px;
   height: 100%;
 }
-body{
+body {
   background-color: burlywood;
 }
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;  
+  padding: 0 15px;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 h1 {
   font-size: 3rem;
@@ -28,5 +25,29 @@ h1 {
   font-weight: bold;
   color: blueviolet;
   padding: 20px;
-  
+}
+* {
+  font-family: sans-serif;
+}
+
+label {
+  display: block;
+  margin: 5px;
+  text-align: right;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.05);
+  font-weight: 500;
+}
+.labels {
+  width: 400px;
+}
+.buttons {
+  width: 400px;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
 }
