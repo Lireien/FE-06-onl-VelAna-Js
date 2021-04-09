@@ -32,9 +32,13 @@ function generateData(count) {
   return result;
 }
 
-const data = generateData(10); 
+const data = loadData(); 
+const layout = getLayout();
+changeLayout(layout);
+const inputElement = document.querySelector(`#grid-${layout}`);
+inputElement.setAttribute('checked','checked')
 
-console.log('data is', data);
+console.log('data is', data, 'layout is', layout);
 
 data.forEach(renderElement);
 
@@ -62,13 +66,18 @@ function renderElement(block) {
 
   const divElement = templateElement.firstElementChild;
   divElement.dataset.id = block.id;
-
   
   // 3. Вставить элемент в контейнер
   const containerElement = document.querySelector('.' + block.container + '__elements-wrapper');
   containerElement.append(divElement);
+  divElement.querySelector('.delete-btn').addEventListener('click', buttonDeletehandler);
+  divElement.querySelector('.template-content').addEventListener('dblclick', editContentHandler, true);
   
-  containerElement.parentElement.classList.remove(block.container + '--empty');
+  if (block.container.includes('content')) {
+    containerElement.parentElement.classList.remove('content--empty');
+  } else {
+    containerElement.parentElement.classList.remove(block.container + '--empty');
+  }
 }
 
 // 1. Выбрать все элементы-кнопки удаления
@@ -78,25 +87,24 @@ function renderElement(block) {
 function buttonDeletehandler(evt) {
   const element = evt.target.parentNode;
   const id = element.dataset.id;
-  const block = data.find(item => item.id == id);
+  const blockIndex = data.findIndex(item => item.id == id);
+  const block = data[blockIndex];
 
   const wrapper = element.parentNode;
   element.remove();
 
   if (wrapper.childNodes.length === 0) {
-    wrapper.parentNode.classList.add(`${block.container}--empty`)
+    if (block.container.includes('content')) {
+      wrapper.parentElement.classList.add('content--empty');
+    } else {
+      wrapper.parentElement.classList.add(block.container + '--empty');
+    }
   }
+
+  data.splice(blockIndex,1);
+  saveData(data);
 }
     
-function addDeleteClickHandlers() {
-  const deleteBtnElement = document.querySelectorAll('.delete-btn');
-  deleteBtnElement.forEach(buttonElement => {
-    buttonElement.addEventListener('click', buttonDeletehandler)
-  })
-}
-
-addDeleteClickHandlers();
-
 // 1. Добавить обработчик клика на элемент
 // 2. При вызове обработчика взять контент элемента
 // 3. Изменить контент на новый
@@ -109,8 +117,7 @@ function editContentHandler(evt){
   const id = editedElement.parentNode.dataset.id;
   const blockIndex = data.findIndex(item => item.id == id);
   const block = data[blockIndex];
-  contentElements.forEach(item => item.contentEditable="false");
-
+  
   let currentValue = '';
   
   if (editedElement.tagName === 'IMG') {
@@ -118,7 +125,6 @@ function editContentHandler(evt){
   } else {
     currentValue = editedElement.innerText;
 
-    editedElement.contentEditable="true";
   }
 
   const newValue = prompt('Вы хотите изменить значение?', currentValue);
@@ -131,14 +137,79 @@ function editContentHandler(evt){
     }
       block.content = newValue;
     
-  }
-  
-  saveData(data);
-  
+  }  
+  saveData(data);  
 }
+
 contentElements.forEach(element => {
   element.addEventListener('dblclick', editContentHandler, true);
 })
+
+  const addBtnElements = document.querySelectorAll('.add-btn');
+  function showAddMenuHandler(evt){
+    const parentElement = evt.currentTarget.parentNode;
+    const addMenuElement = parentElement.querySelector('.choose-elem');
+    addMenuElement.classList.toggle('hidden');
+  }
+  
+  addBtnElements.forEach(item => item.addEventListener('click', showAddMenuHandler));
+
+  const chooseBtnElements = document.querySelectorAll('.choose-elem__btn');
+  function addElementHandler(evt){
+    const clickedBtn = evt.target;
+
+    const block = {
+      id: getRandomNumber(1000000),
+      type: clickedBtn.dataset.type, 
+      content: clickedBtn.dataset.type === 'img' ? 'http://qnimate.com/wp-content/uploads/2014/03/images2.jpg' : clickedBtn.dataset.type, 
+      container: clickedBtn.dataset.container, 
+    }
+    renderElement(block);
+    data.push(block);
+    saveData(data);
+  }
+
+  chooseBtnElements.forEach(item => item.addEventListener('click', addElementHandler))
+
+//Реализация переклчения сетки сайта
+  document.querySelector('.grid-select').addEventListener('change', changeLayoutHandler);
+
+  function changeLayoutHandler(evt){
+    const layout = evt.target.value;
+    changeLayout(layout)
+  } 
+
+  function changeLayout(layout){
+    const layoutElement = document.querySelector('.layout');
+    layoutElement.classList.remove('layout--landing');
+    layoutElement.classList.remove('layout--blog');
+    layoutElement.classList.remove('layout--shop');
+    layoutElement.classList.add(`layout--${layout}`);
+    setLayout(layout);
+  }
+  //Реализация сохранения состояния
+  function saveData(data){
+    console.log('saveData', data)
+    window.localStorage.setItem('data', JSON.stringify(data))
+
+  }
+
+  function loadData(){
+    const data = JSON.parse(window.localStorage.getItem('data'));
+
+    console.log('loadData', data);
+    return data;
+  }
+  function setLayout(layout){
+    localStorage.setItem('LayoutType', layout)
+  }
+  function getLayout(){
+    return localStorage.getItem('LayoutType')
+  }
+  
+  
+
+
 
 
 
