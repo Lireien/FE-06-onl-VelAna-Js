@@ -15,7 +15,6 @@ function generateData(count) {
     } else {
       source = MOCK_TITLES;
     }
-    
     const content = getRandomElementFromArray(source);
     const container = getRandomElementFromArray(CONTAINER_TYPES);
     
@@ -92,7 +91,6 @@ function buttonDeletehandler(evt) {
 
   const wrapper = element.parentNode;
   element.remove();
-
   if (wrapper.childNodes.length === 0) {
     if (block.container.includes('content')) {
       wrapper.parentElement.classList.add('content--empty');

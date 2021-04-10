@@ -19,3 +19,4 @@ export const MOCK_IMAGES = [
   `https://cdn.pixabay.com/photo/2015/02/27/19/06/ornament-652581__340.jpg`,
   `https://cdn.pixabay.com/photo/2016/04/04/22/20/bart-1308396__340.png`,
 ]
+
